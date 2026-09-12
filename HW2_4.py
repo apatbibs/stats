@@ -15,6 +15,8 @@ q = 1-p
 exp = 10000
 x = np.linspace(0,10000,10000)
 
+# You need to set n = 100 and the count the number of
+# values with x=0, 1, 2, ..., n
 P_x = np.random.binomial(n=n, p=p,size=exp)
 
 print(P_x)
@@ -23,5 +25,8 @@ Px2 = (1/(np.sqrt(2*np.pi*n*p*q)))*np.exp(-(x-n*p)**2/(2*n*p*q))
 
 plt.plot(x, P_x, color = 'k')
 plt.plot(x, Px2, color = 'b', alpha = 0.5)
-plt.show()
+
+# Need to save before show because when you close the plot, there
+# is nothing to save.
 plt.savefig("HW2_4.png")
+plt.show()
