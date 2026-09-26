@@ -32,8 +32,8 @@ for k in range(10000):
     S2_bs.append(float(S2_b))
 
 plt.scatter(x,S2_bs,s=5)
-plt.title("$\bar{X} Scatterplot")
+plt.title("$S_b^2$ Scatterplot")
 plt.show()
 plt.hist(S2_bs, bins = 20, edgecolor='k', color='darkgray')
-plt.title("The Average of $\bar{X}")
+plt.title(f"The Average of $S_b^2$ = {np.mean(S2_bs):.2f}")
 plt.savefig("HW3_3_2.png")
