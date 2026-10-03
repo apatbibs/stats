@@ -14,14 +14,14 @@ n = 20
 xbar = 10
 s = 1.03
 #confidence interval of 99%
-CI = 99 #percent
+CI = 99 #percent # This is not an "interval". Better name is "confidence".
 alpha = (1-CI/100)
 
 # t_{alpha/2, n-1}
 # Example 7.11 requires t_{alpha/2, n-1} with alpha = 0.05 and n = 30
 # Find t value such that area to right is 1-0.025 (see Figure 7.8):
         
-t_dist = scipy.stats.t.ppf(1-alpha, df=n-1) 
+t_dist = scipy.stats.t.ppf(1-alpha/2, df=n-1) 
 
 confidence1_1 = float(xbar-t_dist*s/np.sqrt(n))
 confidence1_2 = float(xbar+t_dist*s/np.sqrt(n))
@@ -47,15 +47,16 @@ arr413 = []
 narr = np.arange(5,105,5)
 print('Answer 3:')
 for n in narr:
-    t_distribute = scipy.stats.t.ppf(1-alpha, df=n-1)
     tconfidence1 = float(xbar-t_dist*s/np.sqrt(n))
     tconfidence2 = float(xbar+t_dist*s/np.sqrt(n))
-    length1 = (tconfidence1, tconfidence2)
+    length1 = -(tconfidence1 - tconfidence2)
+    length1 = float(length1)
     
     zconfidence1 = float(xbar-z_dist*s/np.sqrt(n))
     zconfidence2 = float(xbar+z_dist*s/np.sqrt(n))
 
-    length2 = (zconfidence1, zconfidence2)
+    length2 = -(zconfidence1 - zconfidence2)
+    length2 = float(length2)
     
     array = [int(n), length1, length2]
     print(array)

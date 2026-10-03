@@ -1,44 +1,13 @@
 -------------------------------
-HW #1
-
-1. 5/5 But follow instructions - save png image to repo
-2. 5/5
-3. 3/5 See solutions. These are sets, so answer should be set, not probability.
-4. 5/5 Great diagram!
-
-Total: 18/20
--------------------------------
-
--------------------------------
 Quiz #1
 
 10/10 (Not graded)
 -------------------------------
 
 -------------------------------
-HW #2
-1. 5/5
-2. 5/5
-3. 5/5
-4. 3/5
-
-Total: 18/20
--------------------------------
-
--------------------------------
 Quiz #2
 
 2/10
--------------------------------
-
--------------------------------
-HW #3
-1. 3/5 - Let's meet to go over your solution and discuss how to approach these problems.
-   Feel free to email me to set up an appointment.
-2. 5/5 - Don't forget to label axes!
-3. 4/5 - Don't forget to label axes!
-
-Total: 12/15
 -------------------------------
 
 -------------------------------
@@ -59,4 +28,42 @@ Quiz #5
 3/10
 -------------------------------
 
+-------------------------------
+HW #1
 
+1. 5/5 But follow instructions - save png image to repo
+2. 5/5
+3. 3/5 See solutions. These are sets, so answer should be set, not probability.
+4. 5/5 Great diagram!
+
+Total: 18/20
+-------------------------------
+
+-------------------------------
+HW #2
+1. 5/5
+2. 5/5
+3. 5/5
+4. 3/5
+
+Total: 18/20
+-------------------------------
+
+-------------------------------
+HW #3
+1. 3/5 - Let's meet to go over your solution and discuss how to approach these problems.
+   Feel free to email me to set up an appointment.
+2. 5/5 - Don't forget to label axes!
+3. 4/5 - Don't forget to label axes!
+
+Total: 12/15
+-------------------------------
+
+-------------------------------
+HW #4
+1. 4/5
+2. /5
+3. /5
+
+Total: /15
+-------------------------------
