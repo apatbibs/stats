@@ -27,4 +27,6 @@ print(f'CI for Sigma^2: ({CI_sig2_1}, {CI_sig2_2}')
 CI_sig_1 = np.sqrt(CI_sig2_1)
 CI_sig_2 = np.sqrt(CI_sig2_2)
 
+# CIs are listed as [low, high]; you have backwards here.
+# Also, follow instructions (file name and copy solution into comment)
 print(f'CI for Sigma: ({CI_sig_1}, {CI_sig_2})')
