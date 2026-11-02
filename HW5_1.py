@@ -15,11 +15,12 @@ from scipy import stats
 n = 20
 beta0 = 1
 beta1 = 1
-sigma = 0.1
+sigma = 0.2
+
+np.random.seed(0)
 
 x = np.arange(n)/n
 eps = np.random.normal(0, sigma, n)
-
 y = beta0 + beta1*x + eps
 
 plt.scatter(x,y,s=2)
@@ -31,7 +32,7 @@ plt.xlabel('x')
 plt.ylabel('y')
 plt.legend()
 plt.savefig("HW5_1.png")
-plt.show()
+#plt.show()
 
 
 
@@ -62,15 +63,22 @@ print(b0_comp, b1_comp)
 alpha = 0.05
 
 df = n-2
-SSE = np.sum((y - b0_comp + b1_comp*x)**2)
+SSE = np.sum((y - b0_comp - b1_comp*x)**2) # had incorrect - sign. See diff.
 
 s = np.sqrt(SSE/df)
 
 S_xx = np.sum((x - np.mean(x)) ** 2)
 s_beta1 = s/np.sqrt(S_xx)
 
+# These should match:
+print(std_err)
+print(s_beta1)
+#    s = np.std(y - (b0 + b1 * x), ddof=2) # Page 491
+#    Sxx = np.sum((x - np.mean(x))**2)     # Page 493
+#    s_beta_1 = s / np.sqrt(Sxx)  # Page 493
 
 t_crit = stats.t.ppf(1 - alpha/2, df)
+print(t_crit)
 
 ci_lower = b1_comp - t_crit*s_beta1
 ci_upper = b1_comp + t_crit*s_beta1
