@@ -76,7 +76,8 @@ Total: 14/15
 
 -------------------------------
 HW #5
-1. 4.5/5
+1. 4.5/5 See my changes in HW5_1.py at https://github.com/apatbibs/stats/commit/cf91f11767b4c8f88ffa99a7bde54f5f2ce2a996
+         regarding a missing negative sign.
 2. /5
 
 Total: /10
