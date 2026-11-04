@@ -6,7 +6,7 @@
 
 (1-2 paragraphs) Describe where the data came. If data are on-line, provide links.
 
-The data of which I am analyzing for my final project is around 10 processed electron precipitation .nc arrays from the Medium Energy Proton/Electron Detector (MEPED) aboard the Polar-orbiting Operational Environmental Satellites (POES). The base data was procured from the POES database on the NOAA Website at https://www.ncei.noaa.gov/data/poes-metop-space-environment-monitor/access/l1a/v01r00/2023/noaa15/, after which it was run through a python script to filter proton contamination and subsampled to a 16-second cadence. The cadence is an incredibly important element of the processed data because it is the smallest interval that both older and newer MEPED data runs at. In 2012, there was a switch in cadence from 16-second averaged count rates to 2-second averaged count rates.
+The data of which I am analyzing for my final project is around 10 processed electron precipitation .nc arrays from the Medium Energy Proton/Electron Detector (MEPED) aboard the EUMETSAT MetOp Satelite. The base data was procured from the POES database on the NOAA Website at https://www.ncei.noaa.gov/data/poes-metop-space-environment-monitor/access/l1a/v01r00/2023/noaa15/, after which it was run through a python script to filter proton contamination and subsampled to a 16-second cadence. The cadence is an incredibly important element of the processed data because it is the smallest interval that both older and newer MEPED data runs at. In 2012, there was a switch in cadence from 16-second averaged count rates to 2-second averaged count rates.
 
 
 
