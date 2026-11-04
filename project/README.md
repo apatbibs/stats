@@ -22,6 +22,9 @@ MEPED contains 2 proton and 2 electron telescopes
 3 electron channels (~ 25 keV to 2500 MeV)
 Include the 0° and 90° count rates at 16-second cadence (Pettit et al., 2021) 
 Bounce Loss Cone (BLC) flux is calculated from both detectors
+Each file represents one day of data collection
+By taking the mean of the electron counts in each channel for each file, we get an average for the entire day.
+
 
 https://repository.library.noaa.gov/view/noaa/15751/noaa_15751_DS1.pdf
 
