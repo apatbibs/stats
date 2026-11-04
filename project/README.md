@@ -6,6 +6,8 @@
 
 (1-2 paragraphs) Describe where the data came. If data are on-line, provide links.
 
+The data of which I am analyzing for my final project is around 10 processed POES electron precipitation .nc arrays. The base data was procured from the POES database on the NOAA Website at 
+
 ## Interpretation
 
 (1-2 paragraphs) Describe what is measured at a basic level. Provide links to 1-2 high-level descriptions (web pages or papers). This should be a text version of your two-minute overview.
