@@ -32,7 +32,7 @@ https://repository.library.noaa.gov/view/noaa/15751/noaa_15751_DS1.pdf
 
 Provide 1-3 plots that characterize general features of the data. These plots will be revised as you project progresses. The first version should be of what you presented the first time.
 
-![Project Screenshot](project/project_Ia.png)
+![Project Screenshot](project_Ia.png)
 
 # Statistical Test
 
