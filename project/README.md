@@ -16,7 +16,7 @@ The data of which I am analyzing for my final project is around 62 processed ele
 
 (1-2 paragraphs) Describe what is measured at a basic level. Provide links to 1-2 high-level descriptions (web pages or papers). This should be a text version of your two-minute overview.
 
-The MEPED instrument aboard the MetOp satellite contains 2 proton telescopes and 2 electron telescopes, each with 90-degree and 0-degree detectors. It has 6 proton channels and 3 electron channels (~ 25 keV to 2500 MeV), with the 6th proton channel being used to count relativistic electrons from instrument contamination. Each file represents one day of data collection, and by taking the mean of the electron counts in each channel for each file, we get an average for the entire day. From there, I can calculate the standard deviation of the data and find an appropriate conference interval.
+The MEPED instrument aboard the MetOp satellite contains 2 proton telescopes and 2 electron telescopes, each with 90-degree and 0-degree detectors. It has 6 proton channels and 3 electron channels (~ 25 keV to 2500 MeV), with the 6th proton channel being used to count relativistic electrons from instrument contamination. Each file represents one day of data collection, and by taking the mean of the electron counts in each channel for each file, we get an average for the entire day. From there, I can calculate the standard deviation of the data and find an appropriate conference interval. This is my plan for next week.
 
 
 https://repository.library.noaa.gov/view/noaa/15751/noaa_15751_DS1.pdf
