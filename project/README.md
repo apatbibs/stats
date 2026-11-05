@@ -27,6 +27,8 @@ Provide 1-3 plots that characterize general features of the data. These plots wi
 
 ![](project_Ia.png)
 This was my first image of my first draft of my final project. It depicts the processed data from the NOAA-19 (n19) instrument aboard the POES Satellite. After realizing that I did not have enough data from the n19 instrument to perform a meaningful statistical analysis, I decided to pivot to the MetOp-02
+
+
 ![](project_IIa.png)
 
 # Statistical Test
