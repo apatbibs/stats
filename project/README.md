@@ -6,7 +6,7 @@
 
 (1-2 paragraphs) Describe where the data came. If data are on-line, provide links.
 
-The data of which I am analyzing for my final project is around 10 processed electron precipitation .nc arrays from the Medium Energy Proton/Electron Detector (MEPED) aboard the EUMETSAT MetOp Satelite. The base data was procured from the POES database on the NOAA Website at https://www.ncei.noaa.gov/data/poes-metop-space-environment-monitor/access/l1a/v01r00/2023/noaa15/, after which it was run through a python script to filter proton contamination and subsampled to a 16-second cadence. The cadence is an incredibly important element of the processed data because it is the smallest interval that both older and newer MEPED data runs at. In 2012, there was a switch in cadence from 16-second averaged count rates to 2-second averaged count rates.
+The data of which I am analyzing for my final project is around 62 processed electron precipitation .nc arrays from the Medium Energy Proton/Electron Detector (MEPED) aboard the EUMETSAT MetOp Satellite. The base data was procured from the POES database on the NOAA Website at https://www.ncei.noaa.gov/data/poes-metop-space-environment-monitor/access/l1a/v01r00/2023/noaa15/, after which it was run through a python script to filter proton contamination and subsampled to a 16-second cadence. After 2012, the cadence for data collection was switched from a 16-second averaged count rate to 2-second averaged count rate. By subsampling, we can accurately analyze and compare each data set at the smallest interval that they both can run at. MetOp-02, the instrument I will be using, is one of 8 instruments utilized by MAPLE, the electron precipitation research project I am currently working at as a research assistant.
 
 
 
@@ -16,14 +16,7 @@ The data of which I am analyzing for my final project is around 10 processed ele
 
 (1-2 paragraphs) Describe what is measured at a basic level. Provide links to 1-2 high-level descriptions (web pages or papers). This should be a text version of your two-minute overview.
 
-MEPED contains 2 proton and 2 electron telescopes
-90 degree and 0-degree detectors
-6 proton channels 
-3 electron channels (~ 25 keV to 2500 MeV)
-Include the 0° and 90° count rates at 16-second cadence (Pettit et al., 2021) 
-Bounce Loss Cone (BLC) flux is calculated from both detectors
-Each file represents one day of data collection
-By taking the mean of the electron counts in each channel for each file, we get an average for the entire day.
+The MEPED instrument aboard the MetOp satellite contains 2 proton telescopes and 2 electron telescopes, each with 90-degree and 0-degree detectors. It has 6 proton channels and 3 electron channels (~ 25 keV to 2500 MeV), with the 6th proton channel being used to count relativistic electrons from instrument contamination. Each file represents one day of data collection, and by taking the mean of the electron counts in each channel for each file, we get an average for the entire day. From there, I can calculate the standard deviation of the data and find an appropriate conference interval.
 
 
 https://repository.library.noaa.gov/view/noaa/15751/noaa_15751_DS1.pdf
@@ -33,7 +26,7 @@ https://repository.library.noaa.gov/view/noaa/15751/noaa_15751_DS1.pdf
 Provide 1-3 plots that characterize general features of the data. These plots will be revised as you project progresses. The first version should be of what you presented the first time.
 
 ![](project_Ia.png)
-
+This was my first image of my first draft of my final project. It depicts the processed data from the NOAA-19 (n19) instrument aboard the POES Satellite. After realizing that I did not have enough data from the n19 instrument to perform a meaningful statistical analysis, I decided to pivot to the MetOp-02
 ![](project_IIa.png)
 
 # Statistical Test
