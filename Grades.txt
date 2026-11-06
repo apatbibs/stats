@@ -92,7 +92,10 @@ Total: 9.5/10
 -------------------------------
 HW #6
 1. 5/5
-2. 2/5
+2. 2/5 When I did this problem, the AI autocomplete gave me the formulas that you used.
+       They are wrong and don't give the same z and P in the textbook solution.
+       If you used AI to solve, there are two problems (1) you did not document
+       and (2) you did not check with a given solution.
 
 Total: 7/10
 -------------------------------
