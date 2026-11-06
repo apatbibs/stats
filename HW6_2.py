@@ -20,11 +20,11 @@ S_xy = np.sum((x-np.mean(x))*(y-np.mean(y)))
 
 r = S_xy/(np.sqrt(S_xx)*np.sqrt(S_yy))
 
-v = n-2
- 
-z = 0.5*np.log((1+r)/(1-r))*np.sqrt(n-3)
+v = n-2 # Where is this from? Devore computes two values of v that are then
+# used to compute z.
+z = 0.5*np.log((1+r)/(1-r))/np.sqrt(n-3)
 
-P = 2*(1 - stats.norm.cdf(abs(z)))
+P = 2*(1 - stats.norm.cdf(abs(z))) # Why factor of two?
 
 print(f'r = {r}')
 print(f'P = {P}')
