@@ -78,18 +78,7 @@ for itime in range(0, len(ifiles00)):
     time00_s = (time00)*3600
     time90_s = (time90)*3600    
 
-#==================================LShell Index Sort=============================
 
-    # new_lshell00 = lshell00[lshell_index00]
-    # new_lshell90 = lshell90[lshell_index90]
-
-    # new_time_array00 = time00_s[lshell_index00]
-    # new_time_array90 = time90_s[lshell_index90]
-    
-    # mintime = (time00*60)
-
-    # new_EOcounts_array00 = (EOcounts_corrected00[lshell_index00])
-    # new_EOcounts_array90 = (EOcounts_corrected90[lshell_index90])
 #==============================EOcount Void Data Sort============================
 
     
@@ -128,9 +117,9 @@ for itime in range(0, len(ifiles00)):
     mean90_1 = EOcounts1_filtered90.mean()
     meanlist90_E1.append(mean90_1)
 
-    print(mean00_1)
-    print(mean90_1)
-    print()
+    # print(mean00_1)
+    # print(mean90_1)
+    # print()
     
     #Channel 2:
     mean00_2 = EOcounts2_filtered00.mean()
@@ -139,9 +128,9 @@ for itime in range(0, len(ifiles00)):
     mean90_2 = EOcounts2_filtered90.mean()
     meanlist90_E2.append(mean90_2)
 
-    print(mean00_2)
-    print(mean90_2)
-    print()
+    # print(mean00_2)
+    # print(mean90_2)
+    # print()
     
     #Channel 3:
     mean00_3 = EOcounts3_filtered00.mean()
@@ -150,9 +139,9 @@ for itime in range(0, len(ifiles00)):
     mean90_3 = EOcounts3_filtered90.mean()
     meanlist90_E3.append(mean90_3)
 
-    print(mean00_1)
-    print(mean90_1)
-    print()
+    # print(mean00_1)
+    # print(mean90_1)
+    # print()
     
     #Channel 4:
     mean00_4 = EOcounts4_filtered00.mean()
@@ -161,14 +150,27 @@ for itime in range(0, len(ifiles00)):
     mean90_4 = EOcounts4_filtered90.mean()
     meanlist90_E4.append(mean90_4)
 
-    print(mean00_4)
-    print(mean90_4)
+    # print(mean00_4)
+    # print(mean90_4)
 
 #Figure out what EOcounts is
 #List the energy ranges for E1 through E4
+
+# E1 Channel: E > 30keV (nominal range around 30 to 2,500 keV)
+# E2 Channel: E > 100keV (nominal range around 100 to 2,500 keV)
+# E3 Channel: E > 300keV (nominal range around 300 to 2,500 keV)
+# E4 Channel (P6 Channel): E > ~700keV
+
+
 #Compute correlation coefficient between energy channels, hypothesis test that the coeficcinet is not 0, compute error bar on coeficcient by thursday
 #find some literature where they have looked at the correlations (exploratory analysis)
+# - https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2022JA030489
+# - https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2023JA031641
+
 #Compute daily average of Dst.
+
+
+
 
 plt.scatter(n,meanlist00_E1,s=4,label = "E1")
 plt.scatter(n,meanlist00_E2,s=4,label = "E2")
@@ -203,11 +205,83 @@ plt.legend(loc="upper right", ncols=2)
 plt.savefig("project_IIIb.png")
 plt.show()
 
+alpha = 0.05
+
 
 Ch_1_2_00_result = stats.pearsonr(meanlist00_E1, meanlist00_E2)
+r_1_2_00 = Ch_1_2_00_result.statistic
+p_value_1_2_00 = Ch_1_2_00_result.pvalue
 
-print(f"Correlation Coefficient for Channels 1 & 2 on the 0 degree detector: {Ch_1_2_00_result.statistic:.6f}")
-print(f"P-value: {Ch_1_2_00_result.pvalue:.6f}")
+
+# Hypothesis test:
+is_significant = p_value_1_2_00 < alpha
+
+# 95% CI (error bar)
+ci = Ch_1_2_00_result.confidence_interval(confidence_level=0.95)
+err_low = r_1_2_00 - ci.low
+err_high = ci.high - r_1_2_00
+print()
+print(f"Correlation Coefficient for Channels 1 & 2 on the 0 degree detector: {r_1_2_00:.6f} (+{err_high:.6f}/-{err_low:.6f})")
+print(f"95% CI: [{ci.low:.4f}, {ci.high:.4f}]")
+print(f"P-value: {p_value_1_2_00:.4e} (Significant at alpha=0.05?: {is_significant})")
+print()
+
+Ch_1_2_90_result = stats.pearsonr(meanlist90_E1, meanlist90_E2)
+r_1_2_90 = Ch_1_2_90_result.statistic
+p_value_1_2_90 = Ch_1_2_90_result.pvalue
+
+
+# Hypothesis test:
+is_significant = p_value_1_2_90 < alpha
+
+# 95% CI (error bar)
+ci_1_2_90 = Ch_1_2_90_result.confidence_interval(confidence_level=0.95)
+err_low_1_2_90 = r_1_2_90 - ci_1_2_90.low
+err_high_1_2_90 = ci_1_2_90.high - r_1_2_90
+
+print(f"Correlation Coefficient for Channels 1 & 2 on the 90 degree detector: (r): {r_1_2_90:.6f} (+{err_high_1_2_90:.6f}/-{err_low_1_2_90:.6f})")
+print(f"95% CI: [{ci_1_2_90.low:.4f}, {ci_1_2_90.high:.4f}]")
+print(f"P-value: {p_value_1_2_90:.4e} (Significant at alpha=0.05?: {is_significant})")
+print()
+
+
+Ch_3_4_00_result = stats.pearsonr(meanlist00_E3, meanlist00_E4)
+r_3_4_00 = Ch_3_4_00_result.statistic
+p_value_3_4_00 = Ch_3_4_00_result.pvalue
+
+
+# Hypothesis test:
+is_significant = p_value_3_4_00 < alpha
+
+# 95% CI (error bar)
+ci_3_4_00 = Ch_3_4_00_result.confidence_interval(confidence_level=0.95)
+err_low_3_4_00 = r_3_4_00 - ci_3_4_00.low
+err_high_3_4_00 = ci_3_4_00.high - r_3_4_00
+
+print(f"Correlation Coefficient for Channels 3 & 4 on the 0 degree detector: : {r_3_4_00:.6f} (+{err_high_3_4_00:.6f}/-{err_low_3_4_00:.6f})")
+print(f"95% CI: [{ci_3_4_00.low:.4f}, {ci_3_4_00.high:.4f}]")
+print(f"P-value: {p_value_3_4_00:.4e} (Significant at alpha=0.05?: {is_significant})")
+print()
+
+
+Ch_3_4_90_result = stats.pearsonr(meanlist90_E3, meanlist90_E4)
+r_3_4_90 = Ch_3_4_90_result.statistic
+p_value_3_4_90 = Ch_3_4_90_result.pvalue
+
+
+# Hypothesis test:
+is_significant = p_value_3_4_90 < alpha
+
+# 95% CI (error bar)
+ci_3_4_90 = Ch_3_4_90_result.confidence_interval(confidence_level=0.95)
+err_low_3_4_90 = r_3_4_90 - ci_3_4_90.low
+err_high_3_4_90 = ci_3_4_90.high - r_3_4_90
+
+print(f"Correlation Coefficient for Channels 3 & 4 on the 90 degree detector: {r_3_4_90:.6f} (+{err_high_3_4_90:.6f}/-{err_low_3_4_90:.6f})")
+print(f"95% CI: [{ci_3_4_90.low:.4f}, {ci_3_4_90.high:.4f}]")
+print(f"P-value: {p_value_3_4_90:.4e} (Significant at alpha=0.05?: {is_significant})")
+print()
+
 
 
 plt.scatter(meanlist00_E1,meanlist00_E2,s=4)
@@ -224,10 +298,6 @@ plt.savefig("project_IIIc.png")
 plt.show()
     
 
-Ch_1_2_90_result = stats.pearsonr(meanlist90_E1, meanlist90_E2)
-
-print(f"Correlation Coefficient for Channels 1 & 2 on the 90 degree detector: {Ch_1_2_90_result.statistic:.6f}")
-print(f"P-value: {Ch_1_2_90_result.pvalue:.6f}")
 
 
 
@@ -245,10 +315,6 @@ plt.savefig("project_IIId.png")
 plt.show()
 
 
-Ch_3_4_00_result = stats.pearsonr(meanlist00_E3, meanlist00_E4)
-
-print(f"Correlation Coefficient for Channels 3 & 4 on the 0 degree detector: {Ch_3_4_00_result.statistic:.6f}")
-print(f"P-value: {Ch_3_4_00_result.pvalue:.6f}")
 
 
 plt.scatter(meanlist00_E3,meanlist00_E4,s=4)
@@ -263,10 +329,6 @@ plt.savefig("project_IIIe.png")
 plt.show()
     
 
-Ch_3_4_90_result = stats.pearsonr(meanlist90_E3, meanlist90_E4)
-
-print(f"Correlation Coefficient for Channels 3 & 4 on the 90 degree detector: {Ch_3_4_90_result.statistic:.6f}")
-print(f"P-value: {Ch_3_4_90_result.pvalue:.6f}")
 
 
 plt.scatter(meanlist90_E3,meanlist90_E4,s=4)
